@@ -1,47 +1,31 @@
 #include "sort.h"
 
 /**
- * swap_ints - Swap two integers in an array.
- * @a: The first integer to swap.
- * @b: The second integer to swap.
- */
-void swap_ints(int *a, int *b)
-{
-	int tmp;
-
-	tmp = *a;
-	*a = *b;
-	*b = tmp;
-}
-
-/**
- * bubble_sort - bubble Sort an array of integers.
- * @array: Array of integers.
+ * bubble_sort - Sorts an array of integers using the Bubble Sort algorithm.
+ * @array: The array to be sorted.
  * @size: The size of the array.
- *
- * Description: Prints the array.
  */
-void custom_bubble_sort(int *custom_array, size_t custom_size)
+void bubble_sort(int *array, size_t size)
 {
-    size_t custom_i, custom_len = custom_size;
-    bool custom_bubbly;
+	size_t i, j;
+	int tmp, flag = 0;
 
-    if (custom_array == NULL || custom_size < 2)
-        return;
-
-    do
-    {
-        custom_bubbly = false;
-        for (custom_i = 0; custom_i < custom_len - 1; custom_i++)
-        {
-            if (custom_array[custom_i] > custom_array[custom_i + 1])
-            {
-                custom_swap_ints(custom_array + custom_i, custom_array + custom_i + 1);
-                custom_print_array(custom_array, custom_size);
-                custom_bubbly = true;
-            }
-        }
-        custom_len--;
-    } while (custom_bubbly);
+	for (i = 0; i < size; i++)
+	{
+		for (j = 0; j < size - 1; j++)
+		{
+			if (array[j] > array[j + 1])
+			{
+				tmp = array[j + 1];
+				array[j + 1] = array[j];
+				array[j] = tmp;
+				print_array(array, size);
+				flag++;
+			}
+		}
+		if (flag == 0)
+		{
+			return;
+		}
+	}
 }
-

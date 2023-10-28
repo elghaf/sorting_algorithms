@@ -38,7 +38,8 @@ void counting_sort(int *array, size_t size)
     i = size - 1;
     do {
         aux[--count_array[array[i]]] = array[i];
-    } while (i-- != 0);
+		i--;
+    } while (i != 0);
 
     for (i = 0; i < size; i++)
         array[i] = aux[i];

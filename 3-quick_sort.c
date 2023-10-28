@@ -27,7 +27,7 @@ void quick_sort(int *array, size_t size)
 {
     int *current_min;
     size_t outer_index, inner_index;
-    int is_swapped = 0; // Track if any swaps were made
+    int is_swapped = 0;
 
     if (array == NULL || size < 2)
         return;
@@ -42,13 +42,13 @@ void quick_sort(int *array, size_t size)
         if ((array + outer_index) != current_min)
         {
             swap_ints(array + outer_index, current_min);
-            is_swapped = 1; // Mark that a swap occurred
+            is_swapped = 1;
         }
 
         if (is_swapped)
         {
             print_array(array, size);
-            is_swapped = 0; // Reset the is_swapped flag
+            is_swapped = 0;
         }
 
         outer_index++;

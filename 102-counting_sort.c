@@ -12,6 +12,7 @@ void counting_sort(int *array, size_t size)
     int *aux;
     int max = 0;
     size_t i;
+    int *count_array;
 
     if (!array || size < 2)
         return;
@@ -21,7 +22,7 @@ void counting_sort(int *array, size_t size)
             max = array[i];
     }
 
-    int *count_array;
+
     count_array = calloc(max + 1, sizeof(int));
     if (!count_array)
         return;

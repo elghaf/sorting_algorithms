@@ -8,11 +8,13 @@
  */
 void counting_sort(int *array, size_t size)
 {
-    if (!array || size < 2)
-        return;
 
+    int *aux;
     int max = 0;
     size_t i;
+
+    if (!array || size < 2)
+        return;
 
     for (i = 0; i < size; i++) {
         if (array[i] > max)
@@ -27,7 +29,6 @@ void counting_sort(int *array, size_t size)
     for (i = 0; i < size; i++)
         count_array[array[i]]++;
 
-    int *aux;
     aux = malloc(size * sizeof(int));
     if (!aux) {
         free(count_array);

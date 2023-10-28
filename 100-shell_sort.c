@@ -22,7 +22,7 @@ void shell_sort(int *array, size_t size)
 {
 	size_t knuth_gap, outer, inner;
 	int elements_swapped = 0;
-    int current_element = array[outer];
+    int current_element;
     size_t inner_iterator;
 
     if (array == NULL || size < 2)

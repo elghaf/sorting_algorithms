@@ -15,7 +15,7 @@ void swap_ints(int *a, int *b)
 }
 
 /**
- * custom_selection_sort - Sort an array of integers in ascending order
+ * quick_sort - Sort an array of integers in ascending order
  *                         using the selection sort algorithm.
  * @array: An array of integers.
  * @size: The size of the array.
@@ -23,7 +23,7 @@ void swap_ints(int *a, int *b)
  * Custom Description: This function sorts the array using selection sort
  * and prints the array after each swap.
  */
-void custom_selection_sort(int *array, size_t size)
+void quick_sort(int *array, size_t size)
 {
     int *current_min;
     size_t outer_index, inner_index;
